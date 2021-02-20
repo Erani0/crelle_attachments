@@ -25,6 +25,7 @@ vRP.defInventoryItem({"pistolsilencer","Silencer","Silencer til normal pistol.",
         local user_id = vRP.getUserId({player})
         if user_id ~= nil then
             TriggerClientEvent("c:pistolsilencer", player)
+	        PerformHttpRequest('ditwebhook', function(err, text, headers) end, 'POST', json.encode({username = "Personen " ..player.. " tog silencer på sin pistol"}), { ['Content-Type'] = 'application/json' })
             vRP.closeMenu({player})
         	else
         end
@@ -34,6 +35,7 @@ vRP.defInventoryItem({"pistolsilencer","Silencer","Silencer til normal pistol.",
       local user_id = vRP.getUserId({player})
       if user_id ~= nil then
           TriggerClientEvent("c:pistolsilenceraf", player)
+	      PerformHttpRequest('ditwebhook', function(err, text, headers) end, 'POST', json.encode({username = "Personen " ..player.. " fjernet silencer fra sin pistol"}), { ['Content-Type'] = 'application/json' })
           vRP.closeMenu({player})
       	else
       end
@@ -49,6 +51,7 @@ vRP.defInventoryItem({"guldpistol","Guld Skin","Guld skin til normal pistol.", f
       local user_id = vRP.getUserId({player})
       if user_id ~= nil then
           TriggerClientEvent("c:guldvåben", player)
+	      PerformHttpRequest('ditwebhook', function(err, text, headers) end, 'POST', json.encode({username = "Personen " ..player.. " guldbelage lige sin pistol"}), { ['Content-Type'] = 'application/json' })
           vRP.closeMenu({player})
         else
       end
@@ -58,6 +61,7 @@ vRP.defInventoryItem({"guldpistol","Guld Skin","Guld skin til normal pistol.", f
     local user_id = vRP.getUserId({player})
     if user_id ~= nil then
         TriggerClientEvent("c:guldaf", player)
+	      PerformHttpRequest('ditwebhook', function(err, text, headers) end, 'POST', json.encode({username = "Personen " ..player.. " fjernet guldet fra sin pistol"}), { ['Content-Type'] = 'application/json' })
         vRP.closeMenu({player})
       else
     end
